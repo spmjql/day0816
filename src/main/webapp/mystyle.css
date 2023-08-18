@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+
+*{padding: 0; margin: 0;box-sizing: border-box;line-height: 1em;}
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+h1{position: absolute;left:-9999px;}
+ul,ol{list-style: none;}
+a{text-decoration: none;
+	color: rgb(255,150,150);}
+input {
+	border: none;
+}
+button {
+	border: none; background-color: transparent;
+}
+header {
+	border-bottom: 1px solid #a9a9a9;
+}
+
+
+#menu > .wrap ul {
+	display: flex;
+}
+#menu > .wrap ul > li {
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+	margin: 0 10px;
+}
+#menu > .wrap ul > li > a {
+	display: inline-block;
+	padding: 20px;
+}
+#menu > .wrap ul > li > a:hover {
+	color: limegreen;
+	}
+#menu > .wrap ul > li > a::after {
+	content: "";
+	display: block;
+	border-bottom: 2px solid limegreen;
+	position: absolute;
+	width: 0px;	
+	bottom: 0;
+	left: 50%; /*부모가 기준*/
+	transform: translateX(-50%); /*자신이 기준*/
+	transition: width 0.2s;
+	}
+#menu > .wrap ul > li > a:hover::after {
+	width: calc(100% - 20px);
+	scale: 1.1;
+	}
+
+#user-menu {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#user-menu > .wrap > .align{
+	display: flex;
+}
+#logo > .wrap{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#logo > .wrap > a{
+	font-size: 20px;
+}
+#logo > .wrap > a > .group{
+	font-weight: 700; /*bold*/
+}
+
+header > .wrap{
+	height: 70px;
+	width: 1100px;	
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row; 
+}
+
+#user-menu > .wrap > .align > .state-api {
+	color: limegreen;
+	display: flex;
+	/*flex, inline-flex 인 경우 item들으 세로정렬*/
+	align-items: center;
+}
+#user-menu > .wrap > .align > .state-api::before{
+	content: "";
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin: 1px 3px 0 0;
+	/*background-color: red;*/
+	/*background-image: url('check_circle.svg');
+	background-color: limegreen;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;*/
+	vertical-align: top;
+	background-color: limegreen;
+	
+	mask-image: url('./check_circle.svg');
+	mask-size: cover;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	/*아직 지원하지 않는 기능 적용시 -webkit-freefix 적용하기*/
+	-webkit-mask-image: url('./check_circle.svg');
+	-webkit-mask-size: cover;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	}
+	
+#user-menu > .wrap > .align > form{
+	border: 1px solid #a9a9a9;
+	margin-left: 5px;
+	display: flex;
+	/*align-items: center;*/
+	height: 30px;
+	border-radius: 3px;
+}
+#user-menu > .wrap > .align > form > input[type=search]{
+	height: 100%;	
+	width: 180px;
+	font-size: 14px;
+	padding: 0.5em 1em;
+	}
+#user-menu > .wrap > .align > form > input[type=search]:focus{
+	outline: 2px solid rgb(0, 0, 0);
+	/*inset 음각을 표현*/
+	}
+#user-menu > .wrap > .align > form > button{
+	height: 100%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;/*마우스가 오버되면 손가락모양*/
+	}
+#user-menu > .wrap > .align > .login{
+		margin-left: 10px;
+		display: flex;
+		align-items: center;
+}
+#user-menu > .wrap > .align > .login > a {
+		display: flex;
+		width: 80px;
+		height: 28px;
+		background-color: limegreen;
+		color: #fff;
+		font-size: 14px;
+		letter-spacing: 4px;
+		
+		justify-content: center;
+		align-items: center;
+		
+		}
