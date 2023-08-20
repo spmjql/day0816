@@ -159,5 +159,38 @@ header > .wrap{
 		
 		justify-content: center;
 		align-items: center;
-		
 		}
+
+footer {
+	background-color: #ccc;
+	height: 100px;
+	margin-top: 30px;
+}
+#footer_cl{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+#footer_cl > .footer_hr{
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+#footer_cl > .footer_hr > .footer_btn{
+	color: #444;
+}
+#footer_cl > .footer_hr > .footer_l {
+	color: #888;
+	padding: 0 10px;
+}
+
+#footer_cl > .footer_cr{
+	display: flex;
+	justify-content: center;
+	color: #777;
+}
+#footer_cl > .footer_cr div{
+	padding: 0 3px;
+}
