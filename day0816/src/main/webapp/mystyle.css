@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+#visual>.view-area{
+	width: 1920px;
+	margin: 0 auto;
+	border: 1px dotted blue;
+	overflow: hidden;
+	
+}
+#visual>.wrap>.img-wrap{
+	display: flex;
+	/*transition: 1s;*/
+	/*overflow: hidden;*/
+}
+#visual>.wrap>.img-wrap>.vimg>a{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 1920px;	
+	height: 534px;
+	display: inline-block;
+}
+#visual>.wrap>.img-wrap>.v1>a{
+	background-image: url(./images/visual/main1.png);
+}
+#visual>.wrap>.img-wrap>.v2>a{
+	background-image: url(./images/visual/main2.png);
+}
+#visual>.wrap>.img-wrap>.v3>a{
+	background-image: url(./images/visual/main3.png);
+}
+#visual>.wrap>.img-wrap>.v4>a{
+	background-image: url(./images/visual/main4.png);
+}
+
+#api>.wrap{
+	width: 1168px;
+	margin: 0 auto;
+	
+	height: 300px;
+	border: 1px dotted red;
+}
+#notice>.wrap{
+	width: 1168px;
+	margin: 0 auto;
+	
+	height: 400px;
+	border: 1px dotted green;
+}

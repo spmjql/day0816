@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko" >
+	<head>
+		<meta charset="UTF-8" >
+		<title>웹테스트</title>
+		<link rel="stylesheet" href="header.css">
+		<link rel="stylesheet" href="mystyle.css">
+		<link rel="stylesheet" href="footer.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<header>
+			<h1>상단영역</h1>
+			<div class="wrap">
+				<section id="logo">
+					<h1>로고영역</h1>
+					<div class="wrap">
+						<a href="#">
+						<span class="group">GREEN</span>
+						<span class="branch">Nowon</span>
+						</a>
+					</div>
+				</section>
+				<section id="menu">
+					<h1>메뉴영역</h1>
+					<div class="wrap">
+						<ul>
+							<li><a href="#">메뉴1</a></li>
+							<li><a href="#">메뉴2</a></li>
+							<li><a href="#">긴ㅡ글자메뉴</a></li>
+							<li><a href="#">메뉴4</a></li>
+							<li><a href="#">메뉴5</a></li>
+						</ul>
+					</div>
+				</section>
+				<section id="user-menu">
+					<h1>유저메뉴영역</h1>
+					<div class="wrap">
+						<div class="align">
+							<div class="state-api">
+								<sapn>API 상태</sapn>
+							</div>
+						
+							<form>
+								<input type="search" placeholder="검색어">
+								<button type="button"><img src="./search_icon.png" width="24px"></button>
+							</form>
+							<div class="login">
+								<a href="#">로그인</a>
+							</div>
+						</div>
+					</div>
+					
+				</section>
+			</div>
+		</header>
+		<main>
+			<h1>메인영역- main파일당 하나만 표기하세요</h1>
+			<div class="wrap">
+				<section id="visual">
+					<h1>비주얼</h1>
+					<div class="wrap view-area">
+						<ol id="imgs" class="img-wrap">
+							<li class="vimg v1"><a href="#">1</a></li>
+							<li class="vimg v2"><a href="#">2</a></li>
+							<li class="vimg v3"><a href="#">3</a></li>
+							<li class="vimg v4"><a href="#">4</a></li>
+						</ol>
+					</div>
+					<script>
+						var myTimeout;
+						//함수의 정의(:생성)
+						function move(){
+							//document.getElementById("imgs").style.marginLeft="-1920px";
+							//JSON {k:v}
+							//$(selector).animate({styles},speed,easing,callback);
+							$("#imgs").animate({marginLeft:-1920},function (){
+								//callback함수영역
+								//1.li태그를 마지막으로 이동
+								var first=$(".vimg").first();
+								var last=$(".vimg").last();
+								//
+								last.after(first);
+								//document.getElementsByClassName("vimg")
+								//위치 재조정 0
+								$(this).css("margin-left",0);
+								//this 실행하고있는 자신
+								myTimeout = setTimeout(move,3000);
+							});
+							//$("#imgs").css("margin-left","");
+							}
+							myTimeout = setTimeout(move, 3000);//3초후에 실행하는 타이머
+							
+							function timmerStop(){
+								clearTimeout(myTimeout);
+							}
+							$("#imgs").hover(function(){
+								timmerStop()
+							},function(){
+								myTimeout = setTimeout(move, 3000);
+							})
+					</script>
+				</section>
+				<section id="api">
+					<h1>API</h1>
+					<div class="wrap">
+						
+					</div>
+				</section>
+				<section id="notice">
+					<h1>공지사항</h1>
+					<div class="wrap">
+						
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer>
+			<h1>하단영역</h1>
+			<div id="footer_cl">
+				<div class="footer_hr">
+					<a class="footer_btn" href="#">
+						<span>이용약관</span>
+					</a>
+					<a class="footer_btn" href="#">
+						<span><strong>개인정보처리방침</strong></span>
+					</a>
+					<a class="footer_btn" href="#">
+						<span>제휴신청</span>
+					</a>
+					<a class="footer_btn" href="#">
+						<span>GREEN포럼</span>
+					</a>
+					<a class="footer_btn" href="#">
+						<span>GREEN채용</span>
+					</a>
+					<a class="footer_btn" href="#">
+						<span>GREEN D2</span>
+					</a>
+					<a class="footer_btn" href="#">
+						<span>GREEN Open Source</span>
+					</a>
+				</div>
+				<div class="footer_cr">
+					 <div>GREEN Nowon</div>
+					 <div>Copyright © </div>
+					 <div>NAVER Crop.</div>
+					 <div>All Rights Reserved.</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
